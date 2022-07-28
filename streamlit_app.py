@@ -44,14 +44,15 @@ my_cur = my_cnx.cursor()
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
-
-streamlit.write('Thanks for adding ', dd_my_fruit)
-my_cur.excute("insert into fruit_load_lists values ('from streamlit')")
-
 fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
 streamlit.write('Thanks for adding ', fruit_choice)
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
+
+streamlit.write('Thanks for adding ', dd_my_fruit)
+my_cur.excute("insert into fruit_load_lists values ('from streamlit')")
+
+
 
 
 
