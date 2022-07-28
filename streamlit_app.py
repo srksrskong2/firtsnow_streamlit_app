@@ -42,7 +42,8 @@ streamlit.write('Thanks for adding fruit', 'add my fruit')
 
 
 my_cur = my_cnx.cursor()
-my_cur.execute(" inert into fruit_load_list values ('from streamlit')")
+my_cur1 = my_cnx.cursor()
+my_cur1.execute("inert into fruit_load_list values ('from streamlit')")
 my_cur.execute(" select * from fruit_load_list")
 
 
